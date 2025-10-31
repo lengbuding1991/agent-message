@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI对话助手 - 类似DeepSeek的智能对话平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">🤖</div>
+                    <span class="logo-text">AI助手</span>
+                </div>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <span>+</span>
+                    新建对话
+                </button>
+            </div>
+            
+            <div class="chat-history">
+                <div class="history-title">对话历史</div>
+                <div class="history-list" id="historyList">
+                    <!-- 对话历史项将通过JS动态生成 -->
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👤</div>
+                    <span class="user-name">用户</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主聊天区域 -->
+        <div class="main-content">
+            <!-- 聊天头部 -->
+            <div class="chat-header">
+                <div class="chat-title">
+                    <h1>AI对话助手</h1>
+                    <p>随时为您提供智能帮助</p>
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn" id="clearChatBtn" title="清空对话">
+                        🗑️
+                    </button>
+                    <button class="action-btn" id="settingsBtn" title="设置">
+                        ⚙️
+                    </button>
+                </div>
+            </div>
+
+            <!-- 消息容器 -->
+            <div class="messages-container" id="messagesContainer">
+                <div class="welcome-message">
+                    <div class="welcome-icon">✨</div>
+                    <h2>欢迎使用AI对话助手</h2>
+                    <p>我是您的智能助手，可以帮您解答问题、提供建议和进行对话</p>
+                    <div class="quick-questions">
+                        <button class="quick-question" data-question="你好，请介绍一下你自己">
+                            自我介绍
+                        </button>
+                        <button class="quick-question" data-question="你能帮我做什么">
+                            功能说明
+                        </button>
+                        <button class="quick-question" data-question="今天天气怎么样">
+                            天气查询
+                        </button>
+                        <button class="quick-question" data-question="推荐一些学习资源">
+                            学习资源
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <div class="input-actions">
+                        <button class="input-action-btn" title="上传文件">📎</button>
+                        <button class="input-action-btn" title="表情">😊</button>
+                    </div>
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="输入您的问题..." 
+                        rows="1"
+                        maxlength="2000"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn" disabled>
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="char-count">0/2000</span>
+                    <span class="input-tips">按 Enter 发送，Shift + Enter 换行</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载动画 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>AI正在思考中...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

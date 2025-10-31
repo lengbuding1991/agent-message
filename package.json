@@ -1,0 +1,13 @@
+{
+  "name": "ai-chat-website",
+  "version": "1.0.0",
+  "description": "类似DeepSeek的AI对话网站前端",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": ["ai", "chat", "deepseek", "frontend"],
+  "author": "AI Assistant",
+  "license": "MIT"
+}
